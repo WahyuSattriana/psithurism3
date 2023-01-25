@@ -89,7 +89,7 @@ nav {
     position: sticky;
     top: 0;
     background-color: #FFFFFF;
-    z-index: 999;
+    z-index: 999999;
 }
 .nav-links {
     max-width: var(--mx-width);
@@ -115,6 +115,16 @@ nav {
 }
 .nav-links .active {
     font-weight: var(--bold);
+}
+.burger {
+    display: none;
+}
+.burger div {
+    width: 25px;
+    height: 2px;
+    background-color: #212738;
+    margin: 6px;
+    transition: all 0.3s ease;
 }
 
 /* landing */
@@ -194,6 +204,9 @@ section {
 .act-sm4 {
     grid-area: sm4;
 }
+.paragraph {
+    text-align: justify;
+}
 /* main-2 */
 .content-box {
     background-color: #FFFFFF;
@@ -203,6 +216,31 @@ section {
     display: flex;
     flex-direction: column;
     gap: 3rem;
+}
+/* content-box-logbooks */
+.img-container {
+    width: 100%;
+    height: 26rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+.img {
+    width: 100%;
+    height: 100%;
+    background-color: var(--gray);
+    border-radius: 1.3rem;
+    box-shadow: var(--bx-shdw-md);
+}
+.img, .act {
+    overflow: hidden;
+}
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 /* footer */
@@ -230,4 +268,154 @@ footer {
 .background-foot {
     position: absolute;
     bottom: -30rem;
+}
+
+/* mobile-phone */
+@media screen and (max-width:480px) {
+    p {
+        font-size: calc(var(--para) - 0.5rem);
+        letter-spacing: var(--spacing);
+    }
+    a {
+        font-size: calc(var(--para) - 0.5rem);
+        letter-spacing: var(--spacing);
+    }
+    a.btn {
+        padding: 1rem 1.3rem;
+    }
+    h1.title-sm {
+        font-size: calc(var(--txt-sm) * 0.7);
+    }
+    h1.title-md {
+        font-size: calc(var(--txt-md) * 0.7);
+    }
+    h1.title-lg {
+        font-size: calc(var(--txt-lg) * 0.35);
+    }
+    h1.background {
+        font-size: 15rem;
+    }
+
+    /* navbar */
+    nav {
+        position: static;
+    }
+    .nav-links {
+        position: absolute;
+        right: 0;
+        height: 100vh;
+        top: 8vh;
+        background-color: #FFFFFF;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 5vh;
+        width: 100%;
+        opacity: 0;
+        display: none;
+    }
+    .nav-links li {
+        opacity: 0;
+    }
+    .burger {
+        display: block;
+        margin-left: 15rem;
+    }
+
+    /* header */
+    header {
+        margin-bottom: 0;
+    }
+    .header-container {
+        max-width: 100%;
+        position: relative;
+    }
+    .background-land {
+        position: absolute;
+        top: -1rem;
+        left: 0rem;
+    }
+    .title-land {
+        margin-top: 7rem;
+        max-width: 30rem;
+    }
+
+    /* main */
+    main {
+        padding-top: 9rem;
+        margin-bottom: 5rem;
+    }
+    /* main-grid */
+    .act-grid {
+        width: 32rem;
+        height: 100rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: 1fr;
+        gap: 2rem;
+        grid-template-areas: 
+        "lg"
+        "sm1"
+        "sm2"
+        "sm3"
+        "sm4";
+    }
+    /* main-para */
+    section {
+        max-width: 32rem;
+    }
+
+    /* footer */
+    footer {
+        height: 30rem;
+        background-color: var(--yellow);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    h1.background-foot {
+        position: absolute;
+        bottom: -10rem;
+        font-size: 10rem;
+    }
+    footer h1.title {
+        max-width: 34rem;
+    }
+
+    /* logbook-page */
+    .img-container {
+        width: 100%;
+        height: 50rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+}
+.nav-active {
+    transform: translateX(0%);
+    opacity: 1;
+    display: flex;
+    transition: 0.5s ease-in-out;
+}
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2 {
+    opacity: 0;
+}
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px,-6px);
 }
