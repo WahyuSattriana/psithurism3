@@ -1,0 +1,233 @@
+/* base-config */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+*::selection {
+    background-color: #fff384;
+}
+:root {
+    font-size: 62.5%;
+    --para: 1.6rem;
+    --txt-bg: 43rem;
+    --txt-lg: 14rem;
+    --txt-md: 3.6rem;
+    --txt-sm: 2.4rem;
+    --spacing: 0.0095rem;
+    --ext-bold: 800;
+    --bold: 700;
+    --medium: 500;
+    --yellow: #fff8b7;
+    --yellow-wht: #FFFEF3;
+    --gray: #E1E1E1;
+    --bx-shdw-lg: 2px 3px 48px -9px rgba(0,0,0,0.36);
+    --bx-shdw-md: 2px 3px 48px -9px rgba(0, 0, 0, 0.192);
+    --bx-shdw-sm: 10px 10px 112px -90px rgba(0, 0, 0, 0.863);
+    --mx-width: 100rem;
+}
+body {
+    font-size: 1.6rem;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+p {
+    font-weight: var(--medium);
+    font-size: var(--para);
+    letter-spacing: var(--spacing);
+}
+a {
+    text-decoration: none;
+    font-weight: var(--medium);
+    font-size: var(--para);
+    letter-spacing: var(--spacing);
+    color: #000000;
+}
+a.btn {
+    padding: 1.2rem 1.7rem;
+    border: 1px solid var(--gray);
+    border-radius: 1.3rem;
+    box-shadow: var(--bx-shdw-lg);
+    background-color: #FFFFFF;
+}
+h1.title {
+    font-weight: var(--bold);
+    letter-spacing: var(--spacing);
+}
+h1.title-sm {
+    font-size: var(--txt-sm);
+}
+h1.title-md {
+    font-size: var(--txt-md);
+}
+h1.title-lg {
+    font-size: var(--txt-lg);
+}
+h1.background {
+    font-weight: var(--ext-bold);
+    font-size: 35rem;
+    user-select: none;
+}
+h1.background-land {
+    color: var(--yellow);
+}
+h1.background-foot {
+    color: var(--yellow-wht);
+}
+
+/* navbar */
+nav {
+    width: 100%;
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    background-color: #FFFFFF;
+    z-index: 999;
+}
+.nav-links {
+    max-width: var(--mx-width);
+    height: 9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6.6rem;
+}
+.nav-links li {
+    list-style: none;
+}
+.nav-links li :hover {
+    background-color: var(--yellow);
+    transition: 0.2s;
+}
+.nav-links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8rem;
+    padding: 0 4.3rem;
+}
+.nav-links .active {
+    font-weight: var(--bold);
+}
+
+/* landing */
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+.header-container {
+    max-width: var(--mx-width);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+.background-land {
+    position: absolute;
+    top: -7rem;
+    left: -10rem;
+    z-index: -1;
+    margin-top: -3rem;
+}
+.title-land {
+    margin-top: 7rem;
+    max-width: 90rem;
+}
+
+/* main */
+main {
+    padding-top: 15rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+    margin-bottom: 15rem;
+}
+section {
+    max-width: var(--mx-width);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+.act {
+    background-color: var(--gray);
+    box-shadow: var(--bx-shdw-sm);
+    border-radius: 1.3rem;
+}
+.act-grid {
+    width: var(--mx-width);
+    min-height: 45rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "lg sm1 sm2"
+    "lg sm3 sm4";
+    gap: 2rem;
+}
+.act-lg {
+    grid-area: lg;
+}
+.act-sm1 {
+    grid-area: sm1;
+}
+.act-sm2 {
+    grid-area: sm2;
+}
+.act-sm3 {
+    grid-area: sm3;
+}
+.act-sm4 {
+    grid-area: sm4;
+}
+/* main-2 */
+.content-box {
+    background-color: #FFFFFF;
+    box-shadow: var(--bx-shdw-md);
+    padding: 3rem;
+    border-radius: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* footer */
+footer {
+    width: 100%;
+    height: 60rem;
+    background-color: var(--yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.footer-container {
+    max-width: var(--mx-width);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.footer-container .title, .footer-container a {
+    z-index: 999;
+}
+.background-foot {
+    position: absolute;
+    bottom: -30rem;
+}
